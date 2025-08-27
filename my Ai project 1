@@ -1,1 +1,42 @@
+tasks = []
+def mytasks():
+
+    totaltasks = int(input("enter how many tasks you want to add : "))
+
+    for i in range (1,totaltasks+1):
+        taskname = (input(f"enter your task  number {i} :  "))
+        tasks.append(taskname)
+    
+    print("todays tasks are ", tasks)
+mytasks()
+while True :
+    myoper = int(input("enter 1 For add\n 2 for update \n 3 for delete \n 4 for view \n 5 for exit : "))
+
+    if myoper == 1 :
+        add = input("enter task you want to add : ")
+        tasks.append(add)
+        print(f"task {add } has been added ")
+
+    elif myoper == 2 :
+        upp = (input("enter the task you want to update :  "))
+        if upp in tasks:
+            upda_te = input("enter new task : ") 
+            inde_x = tasks.index(upp)
+            tasks[inde_x] = upda_te
+            print("updates task is :  ",upda_te)
+    elif myoper == 3 :
+        del_task = input("enter which task you want to delete : ")
+        if del_task in tasks:
+            inde_x = tasks.index(del_task)
+            del tasks[inde_x]
+
+    elif myoper == 4 :
+        print(" total tasks are : ",tasks)
+    
+    elif myoper == 5 :
+        print("closing the program ")
+        break 
+
+    else:
+        print("invalid input ")
 
